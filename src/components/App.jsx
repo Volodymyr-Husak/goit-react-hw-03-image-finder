@@ -105,8 +105,6 @@ export class App extends Component {
         <SearchBar onFormSubmit={this.handleFormSubmit} />
 
         <ImageGallery
-          // imageName={this.state.imageName}
-          // arrImageWithFetch={this.arrImageWithFetch}
           arrImage={this.state.arrImage}
           onClickImage={this.onClickImage}
         />
