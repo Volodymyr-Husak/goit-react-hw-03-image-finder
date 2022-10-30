@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import propTypes from 'prop-types'; 
+
 export class SearchBar extends Component {
   state = {
     imageName: '',
@@ -27,15 +28,14 @@ export class SearchBar extends Component {
 
   render() {
     return (
-      <header className="searchbar">
-        <form onSubmit={this.handleSubmit} className="form">
-          <button type="submit" className="button">
-            <span className="button-label">Search</span>
+      <header className="Searchbar">
+        <form className="SearchForm" onSubmit={this.handleSubmit} >
+          <button className="SearchForm-button" type="submit" >
+            <span className="SearchForm-button-label">Search</span>
           </button>
 
-          <input
+          <input className="SearchForm-input"
             onChange={this.handleImageNameChange}
-            className="input"
             name="inputImage"
             type="text"
             autoComplete="off"
@@ -48,3 +48,7 @@ export class SearchBar extends Component {
     );
   }
 }
+
+SearchBar.propTypes = {
+  onFormSubmit: propTypes.func.isRequired,
+};
