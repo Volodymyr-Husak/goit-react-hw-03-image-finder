@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { toast } from 'react-toastify';
 import propTypes from 'prop-types'; 
+import css from './SearchBar.module.css'
 
 export class SearchBar extends Component {
   state = {
@@ -16,7 +17,6 @@ export class SearchBar extends Component {
   handleSubmit = e => {
     e.preventDefault();
     if (this.state.imageName.trim() === '') {
-        // alert('Введіть імя зображення');
         toast.warn("Введіть назву зображення");
       return;
     }
@@ -28,13 +28,13 @@ export class SearchBar extends Component {
 
   render() {
     return (
-      <header className="Searchbar">
-        <form className="SearchForm" onSubmit={this.handleSubmit} >
-          <button className="SearchForm-button" type="submit" >
-            <span className="SearchForm-button-label">Search</span>
+      <header className={css.searchBar}>
+        <form className={css.searchForm} onSubmit={this.handleSubmit} >
+          <button className={css.searchForm_button} type="submit" >
+            <span className={css.searchForm_button_label}>Search</span>
           </button>
 
-          <input className="SearchForm-input"
+          <input className={css.searchForm_input}
             onChange={this.handleImageNameChange}
             name="inputImage"
             type="text"
