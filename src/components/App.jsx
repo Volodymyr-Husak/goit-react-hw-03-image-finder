@@ -53,8 +53,8 @@ export class App extends Component {
 
   handleFormSubmit = name => {
     this.setState({ page: 1 });
-    this.setState({ imageName: name });
     this.setState({ arrImage: [] });
+    this.setState({ imageName: name });    
   };
 
   onClickLoadMore = e => {
